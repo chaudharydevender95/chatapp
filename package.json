@@ -20,7 +20,7 @@
     "uuid": "^3.3.2"
   },
   "scripts": {
-    "start": "node src/server/index.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "server": "nodemon src/server/index.js",
     "test": "react-scripts test",

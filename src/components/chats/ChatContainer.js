@@ -28,10 +28,11 @@ export default class ChatContainer extends Component {
 		this.deinitialize()
 	}
     initSocket(){
+        console.log('initsocket')
         const { socket,user } = this.props
         socket.on(PRIVTE_MESSAGE,this.addChat)
 		socket.on('connect', ()=>{
-			socket.emit(COMMUNITY_CHAT, this.resetChat)
+			// socket.emit(COMMUNITY_CHAT, this.resetChat)
         })
         socket.on(USER_CONNECTED,(users)=>{
             this.setState({users:values(users)})
@@ -39,7 +40,7 @@ export default class ChatContainer extends Component {
         socket.on(USER_DISCONNECTED,users=>{
             this.setState({users:values(users)})
         })
-        socket.emit(PRIVTE_MESSAGE,{reciever:"random name",sender:user.name})
+        // socket.emit(PRIVTE_MESSAGE,{reciever:"random name",sender:user.name})
     }
     
     sendOpenPrivateMessage = (reciever)=>{
